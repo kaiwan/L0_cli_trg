@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ $# -lt 3 ]; then
+if [[ $# -lt 3 ]]; then
 	echo "Usage: $0 first second third"
 	exit 1
 fi

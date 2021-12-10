@@ -16,7 +16,7 @@ for fil in $HOME/*; do
 	
 	echo "Press Return to continue, q to quit.."
 	read reply
-	if [ "$reply" = "q" -o "$reply" = "Q" ]; then
+	if [[ "$reply" = "q" -o "$reply" = "Q" ]]; then
 		exit 0
 	fi
 done # > $FORFILE

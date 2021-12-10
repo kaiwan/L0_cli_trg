@@ -1,7 +1,7 @@
 #!/bin/bash
 # Invoke f.e. with:
 # ./param_files $(ls -R ~/)
-if [ $# -eq 0 ]; then
+if [[ $# -eq 0 ]]; then
 	echo "Usage: $0 <param1 ... paramn>"
 	exit 1
 fi

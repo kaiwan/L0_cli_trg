@@ -3,9 +3,9 @@
 # Demonstrates returning a true/false value from a function
 
 foo2() {
-	if [ "$bin" -eq 1 ] ; then
+	if [[ "$bin" -eq 1 ]] ; then
 		return 0 	# equivalent to true!
-	elif [ "$bin" -eq 0 ]; then 
+	elif [[ "$bin" -eq 0 ]]; then 
 		return 1	# equivalent to false!
 	else
 		echo "foo2(): invalid input, aborting.."

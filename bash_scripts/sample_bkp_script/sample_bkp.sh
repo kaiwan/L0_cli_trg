@@ -39,18 +39,18 @@ RESTORE_DIR=.  # replace as appropriate
 #  $2 : path to location to restore to
 restore_bkp()
 {
-[ $# -ne 2 ] && {
+[[ $# -ne 2 ]] && {
   echo "${name}:restore_bkp(): param(s) mising"
   return
 }
-[ ! -d $2 ] && {
+[[ ! -d $2 ]] && {
   echo "destination dir \"${2}\" not present?"
   return
 }
 
 echo "[+] Restoring \"$1\" now to \"$2\", pl wait ..." 
 tar -xf $1 --directory $2
-[ $? -ne 0 ] && {
+[[ $? -ne 0 ]] && {
   echo "${name}: tar cJ failed..."
   exit 1
 }
@@ -65,7 +65,7 @@ echo "[OK]"
 #  $1 : path to dir to (recursively) backup
 bkp_and_zip()
 {
-[ $# -ne 1 ] && {
+[[ $# -ne 1 ]] && {
   echo "${name}:bkp_and_zip(): param mising"
   return
 }
@@ -79,7 +79,7 @@ echo "[+] Backing up \"$1\" to \"${DESTFILE}\" now, pl wait ..."
 #  z => gzip, 
 # man tar   ;for all options
 tar cJ --preserve-permissions -f ${DESTFILE} ${1}
-[ $? -ne 0 ] && {
+[[ $? -ne 0 ]] && {
   echo "${name}: tar cJ failed..."
   exit 1
 }
@@ -99,12 +99,12 @@ echo "[OK]"
 
 # SRCDIR=/opt/...whatever...
 
-[ $# -ne 1 ] && {
+[[ $# -ne 1 ]] && {
   echo "Usage: ${name} root-of-dir-to-backup"
   exit 1
 }
 SRCDIR=$1
-[ ! -d "${SRCDIR}" ] && {
+[[ ! -d "${SRCDIR}" ]] && {
   echo "${name}: dir \"${SRCDIR}\" invalid, aborting..."
   exit 1
 }
@@ -114,6 +114,6 @@ bkp_and_zip "${SRCDIR}"
 # interactive only for demo purposes...
 echo -n "Restore the backup (\"$1\" to \"${RESTORE_DIR}\") [y/N]? "
 read re
-[ "${re}" = "y" -o "${re}" = "Y" ] && restore_bkp ${DESTFILE} ${RESTORE_DIR}
+[[ "${re}" = "y" || "${re}" = "Y" ]] && restore_bkp ${DESTFILE} ${RESTORE_DIR}
 
 exit 0

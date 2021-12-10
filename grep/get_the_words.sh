@@ -2,7 +2,7 @@
 # Show all words containing the letters entered!
 # Crossword puzzle helper perhaps !? :-)
 # Kaiwan NB.
-[ ! -f dictionary.txt ] && {
+[[ ! -f dictionary.txt ]] && {
  echo "$0: dictionary file absent?"
  exit 1
 }

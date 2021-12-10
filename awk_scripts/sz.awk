@@ -15,7 +15,7 @@ BEGIN {
 
    UsingFind=1   # set to 0 is using 'ls'
 
-   printf("File Size Reporter : %d bytes\n",sz);
+   #printf("File Size Reporter : %d bytes\n",sz);
    if (sz == 0)
        sz = 1024*1024; # 1 MB default
 

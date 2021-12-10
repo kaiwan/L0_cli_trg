@@ -1,12 +1,12 @@
 #!/bin/bash
 # Simple front-end to the awk "sz" prg
 
-[ $# -ne 2 ] && {
+[[ $# -ne 2 ]] && {
   echo "Usage: $0 start_folder min_size"
   exit 1
 }
 
-[ ! -d $1 ] && {
+[[ ! -d $1 ]] && {
  echo "$0: $1 not a valid folder?"
  exit 1
 }

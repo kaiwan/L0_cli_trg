@@ -4,12 +4,12 @@
 # dictionary joined together!
 # If you pass a non-zero parameter, we generate that many codewords.
 num=1
-[ $# -eq 1 ] && num=$1
+[[ $# -eq 1 ]] && num=$1
 INPUT=dictionary.txt
 len=$(wc -l ${INPUT}|awk '{print $1}')
 
 i=0
-while [ $i -lt ${num} ]
+while [[ $i -lt ${num} ]]
 do
   rand1=$(((${RANDOM}%${len})))
   rand2=$((${RANDOM}%${len}))

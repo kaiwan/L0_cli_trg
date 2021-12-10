@@ -10,11 +10,11 @@
 #Get the all the network interfaces names in the array
 array=$(ip -br link | awk '{print $1}')
 # Check condition for command line parameter is passed or not
-if [ $# -eq 1 ]      
+if [[ $# -eq 1 ]]      
 then
 		for name in ${array[@]}           # Take one by one of network interface name
 		do
-				if [ "${name}" = "${1}" ]     # Check the network interface present or not
+				if [[ "${name}" = "${1}" ]]     # Check the network interface present or not
 				then
 						ifconfig "$1" | awk '/inet /{print $2}'
 						exit
@@ -26,5 +26,5 @@ then
 
 else
 		echo "Please pass the correct format of command line parameter"    # Display Error message
-		echo "Eg. $./3_getip.sh lo"
+		echo "Eg. $./$0 lo"
 fi

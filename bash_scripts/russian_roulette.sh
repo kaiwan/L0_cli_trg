@@ -4,8 +4,8 @@
 # http://www.commandlinefu.com/commands/view/726/command-line-russian-roulette
 
 # safe version :-P
-while [ true ]
+while true
 do
-  [ $[ $RANDOM % 6 ] == 0 ] && echo "*BANG*" || echo "*Click*"
+  [ $[ RANDOM % 6 ] == 0 ] && echo "*BANG*" || echo "*Click*"
   sleep 0.5
 done

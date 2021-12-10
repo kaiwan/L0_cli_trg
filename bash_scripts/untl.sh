@@ -8,7 +8,7 @@ guess=""
 # Turn off character echoing
 stty -echo
 
-until [ "${guess}" = "${password}" ]
+until [[ "${guess}" = "${password}" ]]
 do
 	echo -n "Password: "
 	read guess
@@ -20,4 +20,3 @@ exit 0
 
 # Ex. Enhance this script to accept only three tries
 # by the user.
-

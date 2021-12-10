@@ -10,14 +10,15 @@ max_attempts=3
 # Turn off character echoing
 stty -echo
 
-until [ "${guess}" = "${password}" ] || [ ${num_attempts} -gt ${max_attempts} ]
+until [[ "${guess}" = "${password}" ]] || [[ ${num_attempts} -gt ${max_attempts} ]]
 do
+    echo
 	echo -n "Password: "
 	read guess
 	num_attempts=$((num_attempts+1))
 done
 gotit=1
-[ ${num_attempts} -gt ${max_attempts} ] && {
+[[ ${num_attempts} -gt ${max_attempts} ]] && {
   gotit=0
   stty sane
   echo "FAILED; this will be reported!"

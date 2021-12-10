@@ -1,10 +1,10 @@
 #!/bin/bash
-[ $# -ne 1 ] && {
+[[ $# -ne 1 ]] && {
   echo "Usage: $0 <start-folder>"
   exit 1
 }
 
-[ ! -d $1 ] && {
+[[ ! -d $1 ]] && {
   echo "$0: $1 is not a valid folder?"
   exit 2
 }

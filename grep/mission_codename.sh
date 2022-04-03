@@ -3,7 +3,7 @@
 # Generate a 'mission codename' consisting of two random words from a
 # dictionary joined together!
 # If you pass a non-zero parameter, we generate that many codewords.
-DICT=dictionaries/dictionary.txt  #english_words.txt
+DICT=dictionaries/dictionary.txt
 [ ! -f ${DICT} ] && {
   echo "Dictionary file ${DICT} not found."
   exit 1

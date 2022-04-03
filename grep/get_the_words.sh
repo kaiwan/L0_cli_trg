@@ -6,7 +6,13 @@
  echo "$0: dictionary file absent?"
  exit 1
 }
+which zenity >/dev/null || {
+	echo "zenity pkg required." ; exit 1
+}
 input=$(zenity --entry --text="Enter the letters" 2>/dev/null)
+[ -z "${input}" ] && {
+	echo "zenity not ok? no GUI mode? aborting..." ; exit 1
+}
 output=$(egrep -i "${input}" dictionary.txt)
 
 TMPF=/tmp/$$

@@ -7,8 +7,18 @@ DICT=dictionaries/english_words.txt
  echo "$0: dictionary file absent?"
  exit 1
 }
+which zenity >/dev/null || {
+	echo "zenity pkg required." ; exit 1
+}
 input=$(zenity --entry --text="Enter the letters" 2>/dev/null)
+<<<<<<< HEAD
 output=$(egrep -i "${input}" ${DICT})
+=======
+[ -z "${input}" ] && {
+	echo "zenity not ok? no GUI mode? aborting..." ; exit 1
+}
+output=$(egrep -i "${input}" dictionary.txt)
+>>>>>>> 6624b6cc4ecaab501c99d5a09e711392fd59abee
 
 TMPF=/tmp/$$
 cat > ${TMPF} << @here@

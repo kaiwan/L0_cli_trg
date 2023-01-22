@@ -3,6 +3,9 @@
 # Embedding a a small 'C' program within the script using
 # a here document.
 #
+# Set Bash unofficial 'strict mode'; _really_ helps catch bugs
+# ref: http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
 
 echo "Generating temp 'C' prg..."
 cat > /tmp/hello_$$.c << @MYMARKER@

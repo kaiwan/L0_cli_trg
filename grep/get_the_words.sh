@@ -2,6 +2,11 @@
 # Show all words containing the letters entered!
 # Crossword puzzle helper perhaps !? :-)
 # Kaiwan NB.
+
+# Set Bash unofficial 'strict mode'; _really_ helps catch bugs
+# ref: http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+
 DICT=dictionaries/websters_unabridged_dictionary.txt
 [[ ! -f ${DICT} ]] && {
  echo "$0: ${DICT} dictionary file absent?"
@@ -24,5 +29,5 @@ num=$(wc -l ${TMPF} |cut -f1 -d' ')
 # delete the last empty line
 #sed --in-place '$d' ${TMPF${DICT}m=$(wc -l ${TMPF} |cut -d" " -f1)
 echo "${num} matches found"
-zenity --title="Your Output (${num} words)" --text-info --filename=${TMPF} --text="${output}" 2>/dev/null
+zenity --title="Your Output (${num} words)" --text-info --filename=${TMPF} 2>/dev/null || true
 rm -f ${TMPF}

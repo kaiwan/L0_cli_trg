@@ -6,6 +6,10 @@
 # returns a ticket price based upon age.
 # Additionally, validity checks are performed at the time of user input- as it should!
 #
+# Set Bash unofficial 'strict mode'; _really_ helps catch bugs
+# ref: http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+
 age=1
 echo "Enter your age --"
 read age

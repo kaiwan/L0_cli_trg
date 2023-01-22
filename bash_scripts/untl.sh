@@ -1,6 +1,9 @@
 #!/bin/bash
 # Simple demo of the until loop
 # Guess the password!
+# Set Bash unofficial 'strict mode'; _really_ helps catch bugs
+# ref: http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
 
 password="PASSWORD"
 guess=""

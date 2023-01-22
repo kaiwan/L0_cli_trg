@@ -1,11 +1,12 @@
 #!/bin/bash
-#
 # age.sh
-# 
 # Interactive bash shell script which prompts for age, and
 # returns a ticket price based upon age
-#
 #cat /proc/$$/cmdline
+
+# Set Bash unofficial 'strict mode'; _really_ helps catch bugs
+# ref: http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
 
 age=1
 echo "Enter your age --"

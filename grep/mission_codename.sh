@@ -3,6 +3,11 @@
 # Generate a 'mission codename' consisting of two random words from a
 # dictionary joined together!
 # If you pass a non-zero parameter, we generate that many codewords.
+
+# Set Bash unofficial 'strict mode'; _really_ helps catch bugs
+# ref: http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+
 DICT=dictionaries/dictionary.txt
 [ ! -f ${DICT} ] && {
   echo "Dictionary file ${DICT} not found."

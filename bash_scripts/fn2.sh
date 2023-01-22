@@ -2,6 +2,10 @@
 # fn2.sh
 # Demonstrates returning a true/false value from a function
 
+# Set Bash unofficial 'strict mode'; _really_ helps catch bugs
+# ref: http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+
 foo2() {
 	if [[ "$bin" -eq 1 ]] ; then
 		return 0 	# equivalent to true!

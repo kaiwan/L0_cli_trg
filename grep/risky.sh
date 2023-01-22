@@ -1,4 +1,8 @@
 #!/bin/bash
+# Set Bash unofficial 'strict mode'; _really_ helps catch bugs
+# ref: http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+
 [[ $# -ne 1 ]] && {
   echo "Usage: $0 <start-folder>"
   exit 1

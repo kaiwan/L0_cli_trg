@@ -1,9 +1,12 @@
 #!/bin/bash
 # Simple front-end to the awk "sz" prg
+# Set Bash unofficial 'strict mode'; _really_ helps catch bugs
+# ref: http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
 
 [[ $# -ne 2 ]] && {
-  echo "Usage: $0 start_folder min_size"
-  exit 1
+	echo "Usage: $0 start_folder min_size(bytes)"
+	exit 1
 }
 
 [[ ! -d $1 ]] && {
